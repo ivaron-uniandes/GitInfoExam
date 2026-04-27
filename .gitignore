@@ -85,3 +85,18 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Archivos de Angular (Ya deberían estar)
+/node_modules/
+/dist/
+/tmp/
+/out-tsc/
+/bazel-out/
+.baseDir
+.angular/
+
+# --- SECCIÓN PARA INTELLIJ IDEA ---
+.idea/
+*.iml
+*.iws
+*.ipr
