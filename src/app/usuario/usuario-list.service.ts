@@ -8,11 +8,11 @@ import { Usuario } from './modelos/usuario.model';
   providedIn: 'root',
 })
 export class UsuarioListService {
-  private apiUrl: string = environment.baseUrl + '/movies';
+  private apiUrl: string = environment.baseUrl + '/users.json';
 
   constructor(private http: HttpClient) {}
 
-  getPeliculas(): Observable<Usuario[]> {
+  getUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.apiUrl);
   }
 }
