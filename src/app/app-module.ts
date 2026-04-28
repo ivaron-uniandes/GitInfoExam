@@ -6,7 +6,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 
 @NgModule({
   declarations: [App],
-  imports: [BrowserModule, AppRoutingModule, UsuarioModule],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })

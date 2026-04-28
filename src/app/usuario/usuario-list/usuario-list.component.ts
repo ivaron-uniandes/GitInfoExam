@@ -13,7 +13,7 @@ import { UsuarioListService } from '../usuario-list.service';
 export class UsuarioListComponent implements OnInit {
   constructor(
     private usuarioListService: UsuarioListService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
   ) {}
 
   usuarios: Usuario[] = [];
@@ -25,6 +25,7 @@ export class UsuarioListComponent implements OnInit {
       this.usuarios = usuarios;
       this.currentPage = 1;
       console.log(usuarios);
+      this.cdr.detectChanges();
     });
   }
 

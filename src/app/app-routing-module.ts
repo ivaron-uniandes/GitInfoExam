@@ -2,10 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: 'usuarios', pathMatch: 'full' },
+/*const routes: Routes = [
+  { path: '', pathMatch: 'full', children: [] },
   { path: 'usuarios', component: UsuarioListComponent },
-  { path: '**', redirectTo: 'usuarios' },
+];*/
+
+const routes: Routes = [
+  // Carga el módulo, no el componente
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuario/usuario.module').then((m) => m.UsuarioModule),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
