@@ -1,0 +1,48 @@
+.poster-card {
+  position: relative;
+  width: calc(80% / N);
+  height: 80%;
+  min-height: 100px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poster-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.directores {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  padding: 20px;
+}
+
+.director {
+  text-align: center;
+}
+
+.director img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.director figcaption {
+  color: #000;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.pagination button {
+  width: 36px;
+  height: 36px;
+  font-size: 0.8rem;
+}
