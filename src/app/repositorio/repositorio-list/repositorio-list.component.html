@@ -1,4 +1,13 @@
-<div class="container-fluid py-3">
+@if (repositorioSeleccionado) {
+  <div class="col">
+    <app-repositorio-detail
+      [repositorio]="repositorioSeleccionado"
+      (volver)="repositorioSeleccionado = null">
+    </app-repositorio-detail>
+  </div>
+}
+@else {
+  <div class="container-fluid py-3">
   <h2 class="mb-3" style="color: #000000; font-weight: bold; font-size: 4rem;">Explorar Repositorios</h2>
   <div class="row mb-3 align-items-center">
     <div class="col-12 col-md-8">
@@ -7,12 +16,11 @@
   </div>
 
   <div class="directores">
-    <figure class="director" *ngFor="let repositorio of pagedRepositorios" [routerLink]="['/usuario/', repositorio.id]" >
+    <figure class="director" *ngFor="let repositorio of pagedRepositorios" (click)="seleccionado(repositorio)" >
       <img src="../../../assets/gitlogo.png" [alt]="repositorio.name">
       <figcaption>{{ repositorio.description }}</figcaption>
     </figure>
   </div>
-
 
 
 
@@ -31,3 +39,4 @@
   </nav>
 
 </div>
+}

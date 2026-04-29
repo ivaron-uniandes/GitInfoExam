@@ -1,0 +1,41 @@
+@if (repositorio) {
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a routerLink="/">Inicio</a>
+    <span class="separator">/</span>
+    <a href="javascript:void(0)" (click)="regresar()">Repositorios</a>
+    <span class="separator">/</span>
+    <span class="active">{{ repositorio.name }}</span>
+  </nav>
+
+  <!-- Info principal -->
+  <section class="main-info">
+
+    <!-- Foto con tarjeta de nacionalidad -->
+    <div class="photo-container">
+      <img src="../../../assets/gitlogo.png" [alt]="repositorio.name" class="director-photo" />
+      <div class="nationality-card">
+        <span class="label">Nombre</span>
+        <span class="value">{{ repositorio.name }}</span>
+      </div>
+    </div>
+
+    <!-- Datos del director -->
+    <div class="director-data">
+      <h1 class="director-name">{{ repositorio.name }}</h1>
+
+      <div class="birth-info">
+        <span class="label">Lenguaje</span>
+        <span class="value">{{ repositorio.language }}</span>
+        <span class="label">Calificación</span>
+        <span class="value">{{ repositorio.starts }}</span>
+        <span class="label">Fecha de creación</span>
+        <span class="value">{{ repositorio.createdAt }}</span>
+        <span class="label">Creador</span>
+        <span class="value">{{ repositorio.ownerId }}</span>
+      </div>
+
+    </div>
+  </section>
+}

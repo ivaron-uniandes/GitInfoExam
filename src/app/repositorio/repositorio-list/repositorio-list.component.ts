@@ -14,6 +14,7 @@ export class RepositorioListComponent implements OnInit {
     private cdr: ChangeDetectorRef,
   ) {}
 
+  repositorioSeleccionado: any = null;
   imagenEstatica = 'src/assets/gitlogo.jpg';
   repositorios: Repositorio[] = [];
   pageSize = 8;
@@ -45,6 +46,11 @@ export class RepositorioListComponent implements OnInit {
     console.log(page);
     if (page < 1 || page > this.totalPages) return;
     this.currentPage = page;
+  }
+
+  seleccionado(repositorio: any): void {
+    this.repositorioSeleccionado = repositorio;
+    console.log('Registro seleccionado ->', repositorio);
   }
 
   ngOnInit(): void {
