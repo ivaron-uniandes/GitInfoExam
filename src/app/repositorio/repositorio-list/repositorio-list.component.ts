@@ -14,6 +14,7 @@ export class RepositorioListComponent implements OnInit {
     private cdr: ChangeDetectorRef,
   ) {}
 
+  imagenEstatica = 'src/assets/gitlogo.jpg';
   repositorios: Repositorio[] = [];
   pageSize = 8;
   currentPage = 1;

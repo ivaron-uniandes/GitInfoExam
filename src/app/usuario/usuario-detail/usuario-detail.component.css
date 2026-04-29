@@ -1,0 +1,292 @@
+.director-detail {
+  padding: 24px 48px;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: #2563eb;
+}
+
+.breadcrumb .active {
+  color: #111827;
+  font-weight: 500;
+}
+
+.breadcrumb .separator {
+  color: #9ca3af;
+}
+
+/* Sección principal */
+.main-info {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+/* Foto del director */
+.photo-container {
+  position: relative;
+  width: 100%;
+}
+
+.director-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  display: block;
+}
+
+.nationality-card {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: #fff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nationality-card .label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+}
+
+.nationality-card .value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Datos del director */
+.director-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.director-name {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: bold;
+  color: #000;
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+}
+
+.birth-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.birth-info .label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+}
+
+.birth-info .value {
+  font-size: 1rem;
+  color: #111827;
+}
+
+.biography-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.biography-box .label {
+  display: block;
+  font-size: 0.7rem;
+  color: #2563eb;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.biography-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0;
+}
+
+/* Filmografía */
+.filmography {
+  margin-top: 48px;
+}
+
+.filmography-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.section-title::after {
+  content: '';
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background: #e5e7eb;
+  margin-left: 16px;
+  vertical-align: middle;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.nav-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1.2rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover:not(:disabled) {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Grid de películas - responsive */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+
+.movie-poster:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.movie-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .movies-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .director-detail {
+    padding: 24px 32px;
+  }
+
+  .main-info {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .photo-container {
+    max-width: 400px;
+  }
+
+  .nationality-card {
+    right: 16px;
+    bottom: -16px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title::after {
+    display: none;
+  }
+
+  .filmography-header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .director-detail {
+    padding: 16px;
+  }
+
+  .biography-box {
+    padding: 16px;
+  }
+
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .movies-grid {
+    gap: 16px;
+  }
+}

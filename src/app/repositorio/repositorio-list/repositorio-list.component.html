@@ -8,7 +8,7 @@
 
   <div class="directores">
     <figure class="director" *ngFor="let repositorio of pagedRepositorios" [routerLink]="['/usuario/', repositorio.id]" >
-      <img [src]="repositorio.name" [alt]="repositorio.name">
+      <img src="../../../assets/gitlogo.png" [alt]="repositorio.name">
       <figcaption>{{ repositorio.description }}</figcaption>
     </figure>
   </div>

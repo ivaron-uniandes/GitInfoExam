@@ -17,6 +17,7 @@ export class UsuarioListComponent implements OnInit {
   ) {}
 
   usuarios: Usuario[] = [];
+  usuarioSeleccionado: any = null;
   pageSize = 8;
   currentPage = 1;
 
@@ -48,7 +49,15 @@ export class UsuarioListComponent implements OnInit {
     this.currentPage = page;
   }
 
+  seleccionado(usuario: any): void {
+    this.usuarioSeleccionado = usuario;
+    console.log("Registro seleccionado ->", usuario);
+  }
+
   ngOnInit(): void {
+    console.log("Reinicio");
     this.getUsuariosList();
   }
+
+  protected readonly alert = alert;
 }
