@@ -38,4 +38,21 @@
 
     </div>
   </section>
+
+  @if (usuarios) {
+    <section class="filmography" >
+      <div class="filmography-header">
+        <h2 class="section-title">Repositorios</h2>
+        @for (usuario of usuarios; track usuario.id) {
+          <div class="movie-card">
+            <img [src]="usuario.avatarUrl" [alt]="usuario.name" class="movie-poster" />
+            <span class="movie-title">{{ usuario.name }}</span>
+          </div>
+        }
+        @empty {
+          <pre>{{ usuarios | json }}</pre>
+        }
+      </div>
+    </section>
+  }
 }

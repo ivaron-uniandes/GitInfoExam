@@ -34,9 +34,28 @@
         <span class="value">{{ usuario.username }}</span>
         <span class="label">Email</span>
         <span class="value">{{ usuario.email }}</span>
+
+
       </div>
 
     </div>
   </section>
+
+  @if (usuarioRepositorios) {
+  <section class="filmography" >
+    <div class="filmography-header">
+      <h2 class="section-title">Repositorios</h2>
+        @for (repositorio of usuarioRepositorios; track repositorio.id) {
+          <div class="movie-card">
+            <img src="../../../assets/gitlogo.png" [alt]="repositorio.name" class="movie-title" />
+            <span class="movie-title">{{ repositorio.description }}</span>
+          </div>
+        }
+        @empty {
+          <pre>{{ usuarioRepositorios | json }}</pre>
+        }
+    </div>
+  </section>
+    }
   <!-- Filmografía -->
 }
